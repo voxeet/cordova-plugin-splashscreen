@@ -280,7 +280,7 @@ public class SplashScreen extends CordovaPlugin {
         final Activity activity = cordova.getActivity();
 
         // Prevent to show the splash dialog if the activity is in the process of finishing
-        if (null != activity && !activity.isFinishing()) {
+        if (null != activity && activity.isFinishing()) {
             return;
         }
         // If the splash dialog is showing don't try to show it again
