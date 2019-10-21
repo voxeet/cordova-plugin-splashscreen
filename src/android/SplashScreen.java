@@ -321,8 +321,9 @@ public class SplashScreen extends CordovaPlugin {
                 splashDialog = (ViewGroup) activity.getWindow().getDecorView().getRootView();
                 // check to see if the splash screen should be full screen
 
-                //use the 0 to force behind every other views - first idea was to iterate over other views and remove/readd
-                splashDialog.addView(splashImageView, 0, layoutParams);
+                int index = 0; //fallback
+                if (splashDialog.getChildCount() > 0) index = 1; //the 0th is the main one
+                splashDialog.addView(splashImageView, index, layoutParams);
 
                 if (preferences.getBoolean("ShowSplashScreenSpinner", true)) {
                     spinnerStart();
