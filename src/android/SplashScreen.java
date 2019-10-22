@@ -324,6 +324,7 @@ public class SplashScreen extends CordovaPlugin {
                 int index = 0; //fallback
                 if (splashDialog.getChildCount() > 0) index = 1; //the 0th is the main one
                 splashDialog.addView(splashImageView, index, layoutParams);
+                isShowing = true;
 
                 if (preferences.getBoolean("ShowSplashScreenSpinner", true)) {
                     spinnerStart();
