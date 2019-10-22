@@ -309,6 +309,13 @@ public class SplashScreen extends CordovaPlugin {
                 // TODO: Use the background color of the webView's parent instead of using the preference.
                 splashImageView.setBackgroundColor(preferences.getInteger("backgroundColor", Color.BLACK));
 
+                splashImageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        
+                    }
+                });
+
                 if (isMaintainAspectRatio()) {
                     // CENTER_CROP scale mode is equivalent to CSS "background-size:cover"
                     splashImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
